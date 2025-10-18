@@ -1,0 +1,66 @@
+<section class="space-y-8 text-slate-100">
+
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">firstName()</p>
+      <p class="text-3xl font-semibold">{{ firstName() }}</p>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-sky-500 hover:bg-slate-900"
+          (click)="updateFirstName()"
+        >
+          Toggle first name
+        </button>
+      </div>
+    </div>
+
+    <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">lastName()</p>
+      <p class="text-3xl font-semibold">{{ lastName() }}</p>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-amber-500 hover:bg-slate-900"
+          (click)="updateLastName()"
+        >
+          Toggle last name
+        </button>
+        <button
+          type="button"
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-500 hover:bg-slate-900"
+          (click)="resetAll()"
+        >
+          Reset both
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase  text-slate-500">fullName()</p>
+      <p class="text-2xl font-semibold">{{ fullName() }}</p>
+      <button
+        type="button"
+        class="inline-flex w-full items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-fuchsia-500 hover:bg-slate-900"
+        (click)="changeFullNameDirectly()"
+      >
+        Toggle full name override
+      </button>
+    </div>
+
+    <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">fullNameReadOnly()</p>
+      <p class="text-2xl font-semibold">{{ fullNameReadOnly() }}</p>
+      @if (fullName() !== fullNameReadOnly()) {
+        <p class="rounded-xl border border-fuchsia-500/50 bg-fuchsia-500/10 px-3 py-2 text-xs text-fuchsia-200">
+          Computed value differs from writable full name.
+        </p>
+      }
+    </div>
+  </div>
+
+
+</section>

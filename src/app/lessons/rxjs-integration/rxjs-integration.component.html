@@ -1,0 +1,37 @@
+<section class="space-y-6 text-slate-100">
+
+  <div class="grid gap-4 md:grid-cols-3">
+    <article class="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Current RxJS value</p>
+      <p class="text-3xl font-semibold">{{ timerSignal() }}</p>
+      <p class="text-xs text-slate-500">The interval stream emits every two seconds up to five values.</p>
+    </article>
+
+    <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Manual clicks</p>
+      <p class="text-3xl font-semibold">{{ manualClicks() }}</p>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-500 hover:bg-slate-900"
+          (click)="addClick()"
+        >
+          +1 click
+        </button>
+        <button
+          type="button"
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-red-500 hover:bg-slate-900"
+          (click)="reset()"
+        >
+          Reset
+        </button>
+      </div>
+    </article>
+
+    <article class="space-y-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Total</p>
+      <p class="text-3xl font-semibold">{{ total() }}</p>
+      <p class="text-xs text-slate-500">Total = RxJS value + manual clicks.</p>
+    </article>
+  </div>
+</section>
