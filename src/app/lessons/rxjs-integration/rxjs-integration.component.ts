@@ -14,8 +14,8 @@ export class RxjsIntegrationComponent {
 
   // هنا بعمل Observable من RxJS بترجع رقم كل ثانية لغاية خمسة بس
   private readonly counter$ = interval(2000).pipe(
-    take(5),
-    map(step => step + 1)
+    take(5),// هنا بحدد الاشتراكات عشان امنع memory leak
+    map(step => step + 1)// وبخليه يبدأ من 1 عشان ميشغلش دماغه ويبدأ من صفر
   );
 
   // هنا بستخدم toSignal عشان احول الـ Observable لسجنال اقدر استخدمه في التمبليت بسهولة
