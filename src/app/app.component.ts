@@ -15,7 +15,8 @@ export class AppComponent {
     { label: 'Computed Signals', path: '/lessons/computed-signals' },
     { label: 'Effects', path: '/lessons/effects' },
     { label: 'Signal Templates', path: '/lessons/signal-templates' },
-    { label: 'RxJS Integration', path: '/lessons/rxjs-integration' }
+    { label: 'RxJS Integration', path: '/lessons/rxjs-integration' },
+    { label: 'Linked Signal', path: '/lessons/linked-signal' }
   ];
   protected readonly menuOpen = signal(false);
 

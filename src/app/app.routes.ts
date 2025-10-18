@@ -34,7 +34,10 @@ export const routes: Routes = [
         path: 'rxjs-integration',
         loadComponent: () => import('./lessons/rxjs-integration/rxjs-integration.component').then(m => m.RxjsIntegrationComponent)
       },
-
+      {
+        path: 'linked-signal',
+        loadComponent: () => import('./lessons/linked-signal/linked-signal.component').then(m => m.LinkedSignalComponent)
+      },
     ]
   },
   {

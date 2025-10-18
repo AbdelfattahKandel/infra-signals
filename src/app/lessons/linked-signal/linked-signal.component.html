@@ -1,0 +1,53 @@
+<section class="space-y-6 text-slate-100">
+  
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">firstName()</p>
+      <p class="text-3xl font-semibold">{{ firstName() }}</p>
+    </article>
+
+    <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500">lastName()</p>
+      <p class="text-3xl font-semibold">{{ lastName() }}</p>
+    </article>
+  </div>
+
+  <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">fullName (linked)</p>
+    <p class="text-3xl font-semibold">{{ fullName() }}</p>
+
+    <div class="flex gap-2">
+      <button
+        type="button"
+        class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-sky-500 hover:bg-slate-900"
+        (click)="setFullName()"
+      >
+        Set My Name override
+      </button>
+      <button
+        type="button"
+        class="inline-flex flex-1 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-medium text-slate-200 transition hover:border-emerald-500 hover:bg-slate-900"
+        (click)="updateFullName()"
+      >
+        Toggle linked value
+      </button>
+    </div>
+  </article>
+
+  <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">fullNameReadOnly (computed)</p>
+    <p class="text-3xl font-semibold">{{ fullNameReadOnly() }}</p>
+    <p class="text-xs text-slate-500">
+      This computed signal mirrors the primitive sources and ignores manual overrides.
+    </p>
+  </article>
+
+  <article class="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">fullNameComputed()</p>
+    <p class="text-3xl font-semibold">{{ fullNameComputed() }}</p>
+    <p class="text-xs text-slate-500">
+      This computed simply reflects whatever `fullName()` currently holds.
+    </p>
+  </article>
+</section>
