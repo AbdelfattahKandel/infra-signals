@@ -25,7 +25,8 @@ export class LinkedSignalComponent {
     ) => {
       const prev = prevValue?.value;
       if (prev === undefined) return newValue;
-      return prev !== newValue ? newValue * 2 : newValue;
+      let pre = newValue * 2;
+      return pre;
     },
   });
   incrementCount = () => {
